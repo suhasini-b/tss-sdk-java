@@ -1,9 +1,11 @@
 name: Deploy
 on:
+  # Run CI against all pushes (direct commits, also merged PRs), Pull Requests
   push:
-    # Publish `v1.2.3` tags as releases.
-    tags:
-      - v*
+    branches:
+      - main
+      - stable-*
+  pull_request:
 
 jobs:
   push:
